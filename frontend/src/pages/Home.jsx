@@ -1,5 +1,6 @@
 import Category from "./HomeComponents/Category";
 import CustomCarousel from "./HomeComponents/CustomCarousel";
+import LocalBrand from "./HomeComponents/LocalBrand";
 import PopularProduct from "./HomeComponents/PopularProduct";
 import SubBanner from "./HomeComponents/SubBanner";
 
@@ -11,6 +12,7 @@ const HeroCarousel = () => {
         <Category />
         <SubBanner />
         <PopularProduct />
+        <LocalBrand />
       </div>
     </div>
   );
