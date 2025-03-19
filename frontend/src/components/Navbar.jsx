@@ -1,14 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineFire } from "react-icons/ai";
-import { BiSupport } from "react-icons/bi";
-import { CiMail } from "react-icons/ci";
+import { Menu, ShoppingCart, X } from "lucide-react";
+import { useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
-import { TbListDetails, TbLogout2 } from "react-icons/tb";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { TbLogout2 } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
@@ -46,8 +43,8 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="flex items-center gap-2 cursor-pointer hover:text-[#3B9DF8]">
-          <Link to="/about" className="flex items-center">
-            Back to School
+          <Link to="/bike" className="flex items-center">
+            Bikes & Accessories
           </Link>
         </li>
         <li className="flex items-center gap-2 cursor-pointer hover:text-[#3B9DF8]">
