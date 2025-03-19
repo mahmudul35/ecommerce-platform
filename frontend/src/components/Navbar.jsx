@@ -171,9 +171,12 @@ const Navbar = () => {
             <hr className="w-full border-black" />
           </div>
           <div className="mt-5 flex gap-2 justify-between">
-            <Button className="w-1/2 h-16 text-white px-4 rounded cursor-pointer">
+            <Link
+              to="/cart"
+              className="w-1/2 h-16 text-white px-4 rounded cursor-pointer bg-slate-900 hover:bg-slate-800 flex items-center justify-center font-semibold"
+            >
               View Cart
-            </Button>
+            </Link>
             <Button className="w-1/2 h-16 text-white px-4 rounded cursor-pointer">
               Checkout
             </Button>
