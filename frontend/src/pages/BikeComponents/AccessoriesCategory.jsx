@@ -142,7 +142,7 @@ const AccessoriesCategory = () => {
   return (
     <section className="py-6">
       <div className="container mx-auto ">
-        <h2 className="text-3xl font-bold text-center text-black font-bold ">
+        <h2 className="text-3xl font-bold text-center text-black  ">
           Bike Accessories
           <hr />
         </h2>

@@ -1,8 +1,8 @@
+import { X } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
-import { useState } from "react";
-import { X } from "lucide-react";
-
 const Cart = () => {
   const [quantity, setQuantity] = useState(1);
   const price = 79.99;
@@ -83,9 +83,11 @@ const Cart = () => {
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <Button className="w-full mt-4 bg-black text-white py-2 cursor-pointer">
-              Proceed to Checkout
-            </Button>
+            <Link to={"/billing"}>
+              <Button className="w-full mt-4 bg-black text-white py-2 cursor-pointer">
+                Proceed to Checkout
+              </Button>
+            </Link>
           </CardContent>
         </Card>
       </div>
