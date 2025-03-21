@@ -4,6 +4,7 @@ import BikeShop from "../pages/BikeShop";
 import BillingAndPayment from "../pages/BillingAndPayment";
 import Cart from "../pages/Cart";
 import Home from "../pages/Home";
+import ShopPage from "../pages/ShopPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/billing",
         element: <BillingAndPayment />,
+      },
+      {
+        path: "/shop",
+        element: <ShopPage />,
       },
     ],
   },
