@@ -4,6 +4,7 @@ import BikeShop from "../pages/BikeShop";
 import BillingAndPayment from "../pages/BillingAndPayment";
 import Cart from "../pages/Cart";
 import Home from "../pages/Home";
+import Login from "../pages/Login/Login";
 import ShopPage from "../pages/ShopPage";
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         element: <ShopPage />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

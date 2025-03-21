@@ -1,17 +1,18 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Menu, ShoppingCart, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TbLogout2 } from "react-icons/tb";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [cartSidebarOpen, setCartSidebarOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const cartRef = useRef(null);
 
@@ -77,18 +78,23 @@ const Navbar = () => {
       <div className="flex items-center gap-4">
         {/* Account Menu */}
         <div className="relative">
-          <button
-            onClick={() => setAccountMenuOpen(!accountMenuOpen)}
-            className="flex items-center gap-2"
-          >
-            <FiUser className="text-[1.5rem]" />
-            <IoIosArrowDown
-              className={`transition-all duration-300 ${
-                accountMenuOpen ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-          {accountMenuOpen && (
+          {loggedIn ? (
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setAccountMenuOpen(!accountMenuOpen)}
+            >
+              <FiUser />
+              <IoIosArrowDown />
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              Login
+            </Link>
+          )}
+          {accountMenuOpen && loggedIn && (
             <div className="bg-white rounded-md absolute top-[40px] right-0 p-3 shadow-lg">
               <p className="flex items-center gap-2 p-2 text-gray-600 hover:bg-gray-100 cursor-pointer">
                 <FiUser /> Profile
