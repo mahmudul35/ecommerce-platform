@@ -163,6 +163,15 @@ const Login = () => {
               </Link>
             </p>
           </form>
+          {/* Add Back to Home Link */}
+          <p className="text-center text-gray-400 mt-4">
+            <Link
+              to="/"
+              className="flex items-center justify-center gap-2 text-blue-500 hover:text-blue-400 border border-gray-700 rounded-lg p-2 hover:bg-gray-800 transition-colors"
+            >
+              <span>←</span> Back to Home
+            </Link>
+          </p>
         </div>
       </div>
     </div>

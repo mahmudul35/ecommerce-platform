@@ -34,7 +34,7 @@ const Navbar = () => {
   }, [cartSidebarOpen]);
 
   return (
-    <nav className="flex items-center justify-between w-full relative px-6 py-1 bg-white shadow-md z-10">
+    <nav className="flex items-center justify-between w-full relative px-10 py-3 bg-white shadow-md z-10 mb-4">
       {/* Logo */}
       <Link to="/">
         <img
@@ -89,7 +89,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-2 cursor-pointer font-bold hover:text-[#3B9DF8]"
             >
               Login
             </Link>
