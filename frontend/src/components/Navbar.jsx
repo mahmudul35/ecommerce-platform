@@ -1,17 +1,36 @@
 "use client";
-import { Menu, ShoppingCart, X } from "lucide-react";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TbLogout2 } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [cartSidebarOpen, setCartSidebarOpen] = useState(false);
+
+  const cartRef = useRef(null);
+
+  // Close cart sidebar if clicked outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setCartSidebarOpen(false);
+      }
+    }
+
+    if (cartSidebarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [cartSidebarOpen]);
 
   return (
     <nav className="flex items-center justify-between w-full relative px-6 py-1 bg-white shadow-md z-10">
@@ -72,7 +91,7 @@ const Navbar = () => {
           {accountMenuOpen && (
             <div className="bg-white rounded-md absolute top-[40px] right-0 p-3 shadow-lg">
               <p className="flex items-center gap-2 p-2 text-gray-600 hover:bg-gray-100 cursor-pointer">
-                <FiUser /> View Profile
+                <FiUser /> Profile
               </p>
               <p className="flex items-center gap-2 p-2 text-gray-600 hover:bg-gray-100 cursor-pointer">
                 <IoSettingsOutline /> Settings
@@ -113,7 +132,7 @@ const Navbar = () => {
           >
             <X className="text-gray-600" />
           </button>
-          <ul className=" gap-[16px] text-[1rem] text-[#424242] flex flex-col">
+          <ul className=" gap-[16px] text-[1rem] text-[#424242] flex flex-col mt-10">
             <li className="flex items-center gap-2 cursor-pointer hover:text-[#3B9DF8]">
               Electronics
             </li>
@@ -146,7 +165,10 @@ const Navbar = () => {
 
       {/* Cart Sidebar */}
       {cartSidebarOpen && (
-        <div className="fixed top-0 right-0 w-[350px] h-full bg-white shadow-lg p-5">
+        <div
+          ref={cartRef}
+          className="fixed top-0 right-0 w-[350px] h-full bg-white shadow-lg p-5"
+        >
           <button
             onClick={() => setCartSidebarOpen(false)}
             className="absolute top-2 right-2"

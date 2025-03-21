@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Discover = () => {
   return (
     <div>
       <div
-        className="relative w-full min-h-[60vh] bg-cover bg-center"
+        className="relative w-full min-h-[65vh] bg-cover bg-center"
         style={{
           backgroundImage: "url('/discover.jpg')",
           backgroundPosition: "center",
@@ -18,7 +20,7 @@ const Discover = () => {
             }}
           >
             <div className="container mx-auto">
-              <h2 className="text-5xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Discover Your Next Favorite Product
               </h2>
               <p className="text-lg text-gray-200 max-w-lg mb-6">
@@ -26,9 +28,12 @@ const Discover = () => {
                 tailored for the Pabna community. Shop now and support local
                 entrepreneurs!
               </p>
-              <button className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition rounded-md cursor-pointer">
+              <Link
+                to="/shop"
+                className="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition rounded-md cursor-pointer"
+              >
                 Start Shopping Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
