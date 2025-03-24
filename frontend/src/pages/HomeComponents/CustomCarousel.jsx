@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
   Carousel as UICarousel,
 } from "../../components/ui/carousel";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -62,9 +63,12 @@ const CustomCarousel = () => {
                 <div className="text-white text-center px-4 z-10 max-w-2xl">
                   <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
                   <p className="text-lg mb-6">{slide.description}</p>
-                  <button className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200">
+                  <Link
+                    to="/shop"
+                    className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200"
+                  >
                     {slide.buttonText}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </CarouselItem>
