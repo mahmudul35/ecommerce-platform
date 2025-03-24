@@ -195,7 +195,7 @@ export default function ShopPage() {
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold mb-3">Filters</h2>
           <X
-            className="cursor-pointer"
+            className="cursor-pointer md:hidden"
             onClick={() => setIsFilterOpen(!isFilterOpen)}
           />
         </div>
